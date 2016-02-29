@@ -35,6 +35,9 @@ class Parameters implements ParametersInterface
     public function __construct(array $parameters = array())
     {
         $this->parameters = $this->filter($parameters) + $this->getDefaults();
+        
+        error_log(var_export($this->parameters, true));
+        
     }
 
     /**
